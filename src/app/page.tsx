@@ -13,6 +13,9 @@ export default function Home() {
                 <p className="text-md font-thin">
                     The page is under developing and it will be life as ASP
                 </p>
+                <p className="text-end w-full text-brand-secondary">
+                    ab@kodee.no
+                </p>
             </div>
         </main>
     );
