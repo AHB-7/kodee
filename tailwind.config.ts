@@ -22,7 +22,7 @@ const config: Config = {
                     secondary: "#E6881A",
                     error: "#E61A1A",
                     light: "#EDE0D2",
-                    dark: "#2C2D2B",
+                    dark: "#1A2421",
                 },
             },
         },
