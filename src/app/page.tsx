@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -11,35 +12,32 @@ export default function Home() {
                     alt=""
                     className="py-4"
                 ></Image>
+                <p className="text-brand-primary absolute top-0 left-0 p-3 ">
+                    ab@kodee.no
+                </p>
                 <div className="flex-1 flex items-center justify-center flex-col">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center text-brand-light px-1 md:max-w-3xl lg:max-w-4xl">
-                        Gjør din visjon til en{" "}
-                        <span className="bg-brand-secondary bg-opacity-80 rounded-md inline-flex items-center justify-center p-1">
-                            unik
-                        </span>
-                        og
-                        <span className="bg-brand-primary bg-opacity-80 rounded-md inline-flex items-center justify-center p-1">
-                            imponerende
-                        </span>
-                        online tilstedeværelse !
+                    <h1 className="px-2 text-5xl md:text-7xl lg:text-9xl font-extrabold text-center">
+                        Gjør din{" "}
+                        <span className=" text-brand-secondary">visjon</span>
+                        <br />
+                        til
+                        <span className=" text-brand-primary">virkelighet</span>
+                        !
                     </h1>
-                    <p className="px-4 text-gray-400 text-sm font-light text-center py-6">
-                        Ekspert tjenester innen webdesign, utvikling og
-                        markedsføring for å hjelpe din bedrift å vokse.
-                    </p>
-                    <div className="flex gap-3 flex-wrap-reverse items-center justify-center">
-                        <button className="bg-brand-primary px-8 py-2 text-brand-dark font-bold rounded-md text-md">
+                    <div className="flex gap-3 flex-wrap-reverse items-center justify-center mt-12">
+                        <button className="bg-brand-primary px-8 py-2 text-brand-dark font-mono text-lg">
                             Send Medling
                         </button>
-                        <button className=" text-brand-light px-8 py-2 border border-brand-light  font-bold rounded-md text-md">
+                        <button className=" text-brand-light px-8 py-2 border border-brand-light font-mono text-lg">
                             Bestill Gratis Møte
                         </button>
                     </div>
-
-                    <p className="text-end w-full text-brand-primary">
-                        ab@kodee.no
-                    </p>
                 </div>
+            </div>
+            <div className="w-full h-16 hover:bg-brand-secondary flex items-center justify-center">
+                <Link href="" className="">
+                    <p className="font-extrabold text-3xl">MENU</p>
+                </Link>
             </div>
         </main>
     );
