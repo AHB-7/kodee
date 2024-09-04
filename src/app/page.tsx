@@ -1,17 +1,18 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
+import MyComponent from "./servers/get-images";
 
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between  bg-brand-dark">
-            <div className="flex items-center justify-between flex-col w-full flex-1">
-                <Image
+        <main className="flex min-h-screen flex-col items-center justify-between">
+            <div className="flex items-center justify-between flex-col w-full flex-1 z-10">
+                {/* <Image
                     src="./assets/kodee-log-light.svg"
                     width={100}
                     height={50}
                     alt=""
                     className="py-4"
-                ></Image>
+                ></Image> */}
                 <p className="text-brand-primary absolute top-0 left-0 p-3 ">
                     ab@kodee.no
                 </p>
@@ -28,7 +29,7 @@ export default function Home() {
                         <button className="bg-brand-primary px-8 py-2 text-brand-dark font-mono text-lg">
                             Send Medling
                         </button>
-                        <button className=" text-brand-light px-8 py-2 border border-brand-light font-mono text-lg">
+                        <button className="px-8 py-2 border border-brand-light font-mono text-lg">
                             Bestill Gratis Møte
                         </button>
                     </div>
@@ -39,6 +40,7 @@ export default function Home() {
                     <p className="font-extrabold text-3xl">MENU</p>
                 </Link>
             </div>
+            <MyComponent />
         </main>
     );
 }
