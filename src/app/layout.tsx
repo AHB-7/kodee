@@ -13,7 +13,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="no">
+        <html lang="no" className=" overflow-x-hidden">
             <body className=" bg-brand-dark text-brand-light ">{children}</body>
         </html>
     );
