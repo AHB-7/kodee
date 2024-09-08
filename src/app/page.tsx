@@ -25,9 +25,7 @@ function Imager({ id }: { id: number }) {
             <div
                 ref={ref}
                 className="max-w-7xl bg-red-700 flex items-center justify-center "
-            >
-                
-            </div>
+            ></div>
             <motion.h2
                 className=" text-brand-primary"
                 style={{ y }}

@@ -3,61 +3,26 @@
 @tailwind utilities;
 
 h1 {
-    font-size: 56px;
-    font-weight: 700;
-    letter-spacing: -3px;
-    line-height: 1.2;
-    text-align: center;
-    margin: 100px 0;
-  }
-  
-  h2 {
-    margin: 0;
-    color: var(--accent);
-    left: calc(50% + 130px);
-    font-size: 56px;
-    font-weight: 700;
-    letter-spacing: -3px;
-    line-height: 1.2;
-    position: absolute;
-  }
-  
-  section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    scroll-snap-align: center;
-    perspective: 500px;
-  }
-  
-  section > div {
-    width: 300px;
-    height: 400px;
-    position: relative;
-    max-height: 90vh;
-    margin: 20px;
-    background: var(--white);
-    overflow: hidden;
-  }
-  
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .progress {
-    position: fixed;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: var(--accent);
-    bottom: 100px;
-  }
-  
+    @apply text-brand-light text-5xl font-extrabold tracking-tight text-center mt-12;
+}
+.header {
+    @apply text-brand-light p-4 border-b-2 border-brand-primary;
+}
+.primary-btn {
+    @apply border-brand-primary border-2 border-l-0 text-brand-light font-normal py-1 px-4;
+}
+.primary-btn:hover {
+    @apply bg-brand-primary duration-200;
+}
+input[type="text"] {
+    @apply border-2 border-brand-primary focus:outline-none py-1 px-2 bg-inherit border-r-0;
+}
+.tasks {
+    @apply flex items-start flex-wrap gap-2 pt-6 max-w-4xl mx-auto;
+}
+.task > p {
+    @apply py-2;
+}
+.task {
+    @apply border ps-4 flex items-center justify-between max-h-72;
+}
