@@ -1,15 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, FormEvent } from "react";
+
+// Define a type for a task (in case it becomes more complex later)
+interface Task {
+    id: number;
+    name: string;
+}
 
 export default function ToDo() {
-    const [tasks, setTasks] = useState([]);
-    const addTask = (e: any) => {
+    const [tasks, setTasks] = useState<Task[]>([]);
+
+    const addTask = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const task = e.target.task.value.trim();
-        if (task) {
-            setTasks([...tasks, task]);
+        const taskName = e.currentTarget.task.value.trim();
+        if (taskName) {
+            const newTask: Task = { id: Date.now(), name: taskName };
+            setTasks([...tasks, newTask]);
         }
+        e.currentTarget.reset(); // Clear the input after submission
+    };
+
+    const removeTask = (id: number) => {
+        setTasks(tasks.filter((task) => task.id !== id));
     };
 
     return (
@@ -31,17 +44,13 @@ export default function ToDo() {
                     </button>
                 </form>
             </section>
-            <section className=" flex items-center justify-center">
+            <section className="flex items-center justify-center">
                 <ul className="tasks w-full">
-                    {tasks.map((task, index) => (
-                        <li key={index} className="task w-72 mx-auto">
-                            <p>{task}</p>
+                    {tasks.map((task) => (
+                        <li key={task.id} className="task w-72 mx-auto">
+                            <p>{task.name}</p>
                             <button
-                                onClick={() =>
-                                    setTasks(
-                                        tasks.filter((_, i) => i !== index)
-                                    )
-                                }
+                                onClick={() => removeTask(task.id)}
                                 className="text-brand-light relativ right-0 top-0 font-extrabold min-w-6 h-full bg-brand-error"
                             >
                                 X
