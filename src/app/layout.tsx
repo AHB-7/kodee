@@ -1,5 +1,11 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import { Antonio } from "next/font/google";
+import { Metadata } from "next";
+
+const antonio = Antonio({
+    weight: ["400", "600", "700"], // Choose specific weights
+    subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
     title: "Kodee",
@@ -13,8 +19,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="no" className=" overflow-x-hidden">
-            <body className=" bg-brand-dark text-brand-light ">{children}</body>
+        <html lang="no" className={antonio.className}>
+            <body className="bg-brand-dark text-brand-light">{children}</body>
         </html>
     );
 }

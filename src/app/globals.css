@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply bg-brand-dark text-white font-medium tracking-wide max-w-6xl mx-auto;
+    @apply bg-brand-dark text-white max-w-6xl mx-auto;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -13,26 +13,21 @@ body {
     @apply flex items-center justify-center flex-col;
 }
 h1 {
-    @apply text-4xl md:text-5xl font-extrabold tracking-tight text-center mt-12;
+    @apply text-7xl md:text-9xl text-center mt-12 font-extrabold;
 }
 h2 {
-    @apply text-3xl md:text-4xl font-bold tracking-tight;
+    @apply text-3xl md:text-4xl font-bold;
 }
 h3 {
-    @apply text-2xl md:text-3xl font-extrabold tracking-tight;
+    @apply text-2xl md:text-3xl;
 }
 h4 {
-    @apply text-xl md:text-2xl font-extrabold tracking-tight;
+    @apply text-xl md:text-2xl;
 }
 .header {
     @apply text-brand-light p-4 border-b-2 border-brand-primary;
 }
-.primary-btn {
-    @apply border-brand-primary border-2 border-l-0 text-brand-light font-normal py-1 px-4;
-}
-.primary-btn:hover {
-    @apply bg-brand-primary duration-200;
-}
+
 input[type="text"] {
     @apply border-2 border-brand-primary focus:outline-none py-1 px-2 bg-inherit border-r-0;
 }
@@ -49,10 +44,10 @@ input[type="text"] {
     @apply w-full max-w-4xl opacity-70 h-full flex items-center justify-center -z-10 brightness-90 blur-0 hover:blur-sm;
 }
 .primary-btn {
-    @apply bg-brand-primary text-brand-dark font-bold py-1 px-8 relative;
+    @apply bg-brand-light text-brand-dark font-bold py-2 md:py-4 px-8 md:px-16 relative hover:bg-brand-light text-xl md:text-3xl duration-300;
 }
 .primary-btn::before {
     content: "";
     z-index: -1;
-    @apply absolute -bottom-1 left-1 hover:-bottom-0 hover:-left-0 bg-brand-light w-full h-full duration-300;
+    @apply absolute -bottom-1 left-1 hover:-bottom-0 hover:-left-0 bg-brand-primary w-full h-full duration-300;
 }
