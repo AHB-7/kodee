@@ -23,7 +23,7 @@ export default function StartAnimation() {
                 initial={{ opacity: 0 }} // Start invisible
                 animate={{
                     opacity: [0, 1, 0, 1, 0.2, 1, 0.1, 1, 0.3, 0.9, 0.6, 1],
-                    y: [0, 0, -380],
+                    y: [0, 0, -340],
                     scale: [0.5, 0.8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.3],
                 }}
                 transition={{
