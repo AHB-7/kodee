@@ -19,11 +19,12 @@ export default function StartAnimation() {
     return (
         <div className="flex flex-col justify-center items-center h-screen absolute mx-auto">
             <motion.div
-                className="flex justify-center items-center mb-8"
+                className="flex justify-center items-center "
                 initial={{ opacity: 0 }} // Start invisible
                 animate={{
                     opacity: [0, 1, 0, 1, 0.2, 1, 0.1, 1, 0.3, 0.9, 0.6, 1],
-                    y: [0, 0, -300],
+                    y: [0, 0, -380],
+                    scale: [0.5, 0.8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.3],
                 }}
                 transition={{
                     duration: 2.4,
@@ -50,7 +51,6 @@ export default function StartAnimation() {
                 />
             </motion.div>
 
-            {/* Circle Progress */}
             <motion.svg
                 width="120"
                 height="120"
@@ -90,7 +90,7 @@ export default function StartAnimation() {
                         strokeDashoffset: [circleCircumference, 0],
                     }}
                     transition={{
-                        duration: 2.2, // Sync with the animation duration
+                        duration: 2.2,
                         ease: "easeIn",
                     }}
                 />

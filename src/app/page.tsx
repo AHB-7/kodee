@@ -6,7 +6,7 @@ import HeroContent from "./components/home/hero/hero-content/hero-content";
 export default function Home() {
     return (
         <main className="center-section">
-            <section className="center-section">
+            <section className="center-section overflow-hidden">
                 <StartAnimation />
                 <ParticlesComponent />
                 <HeroContent />
