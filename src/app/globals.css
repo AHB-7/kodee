@@ -2,8 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply bg-brand-dark text-white font-medium tracking-wide max-w-6xl mx-auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center-section {
+    @apply flex items-center justify-center flex-col;
+}
 h1 {
-    @apply text-brand-light text-5xl font-extrabold tracking-tight text-center mt-12;
+    @apply text-5xl font-extrabold tracking-tight text-center mt-12;
+}
+h2 {
+    @apply text-4xl font-bold tracking-tight;
+}
+h3 {
+    @apply text-3xl font-extrabold tracking-tight;
+}
+h4 {
+    @apply text-2xl font-extrabold tracking-tight;
 }
 .header {
     @apply text-brand-light p-4 border-b-2 border-brand-primary;

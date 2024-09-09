@@ -1,25 +1,16 @@
-"use client";
-
-import { useRef } from "react";
-import {
-    motion,
-    useScroll,
-    useSpring,
-    useTransform,
-    MotionValue,
-} from "framer-motion";
-import StartAnimation from "./components/start-animation";
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import VantaComponent from "./components/back-ground/vanta";
+import StartAnimation from "./components/home/hero/start-animation/start";
+import React from "react";
+import ParticlesComponent from "./components/home/hero/partcles/partcle";
+import HeroContent from "./components/home/hero/hero-content/hero-content";
 
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between">
-            <div className="flex items-center justify-center flex-col object-contain">
+        <main className="center-section">
+            <section className="center-section">
                 <StartAnimation />
-                <VantaComponent />
-            </div>
+                <ParticlesComponent />
+                <HeroContent />
+            </section>
         </main>
     );
 }

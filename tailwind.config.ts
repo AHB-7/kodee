@@ -18,8 +18,8 @@ const config: Config = {
             },
             colors: {
                 brand: {
-                    primary: "#FF6746",
-                    secondary: "#F8AF06",
+                    primary: "#49FF46",
+                    secondary: "#FF6746",
                     error: "#E61A1A",
                     light: "#F2F4F3",
                     dark: "#0A0908",
