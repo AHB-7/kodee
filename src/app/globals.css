@@ -13,7 +13,7 @@ body {
     @apply flex items-center justify-center flex-col;
 }
 h1 {
-    @apply text-7xl md:text-9xl text-center mt-12 font-extrabold;
+    @apply text-6xl xs:text-7xl sm:text-8xl md:text-9xl text-center mt-12 font-extrabold;
 }
 h2 {
     @apply text-3xl md:text-4xl font-bold;
@@ -44,7 +44,7 @@ input[type="text"] {
     @apply w-full max-w-4xl opacity-70 h-full flex items-center justify-center -z-10 brightness-90 blur-0 hover:blur-sm;
 }
 .primary-btn {
-    @apply bg-brand-light text-brand-dark font-bold py-2 md:py-4 px-8 md:px-16 relative hover:bg-brand-light text-xl md:text-3xl duration-300;
+    @apply bg-brand-light text-brand-dark font-bold py-2 px-12 relative hover:bg-brand-light text-xl duration-300;
 }
 .primary-btn::before {
     content: "";

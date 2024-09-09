@@ -16,6 +16,10 @@ const config: Config = {
             fontFamily: {
                 sans: ["Antonio"],
             },
+            screens: {
+                sm: "600px",
+                xs: "350px",
+            },
             colors: {
                 brand: {
                     primary: "#49FF46",

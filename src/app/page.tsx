@@ -4,10 +4,11 @@ import Background from "./components/home/hero/bacground";
 
 export default function Home() {
     return (
-        <main className="center-section">
+        <main className=" w-full max-w-5xl mx-auto">
             <section className="center-section overflow-hidden">
-                <HeroHome />
                 <Background />
+            </section>
+            <section className="overflow-hidden">
                 <HeroHome />
             </section>
         </main>
