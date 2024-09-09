@@ -27,7 +27,7 @@
         "**/*.tsx",
         ".next/types/**/*.ts",
         "src/app/components/req.js",
-        "src/app/components/home/hero/partcles/partcle.tsx"
+        "src/app/components/home-for-otheApps/partcles/partcle.tsx"
     ],
     "exclude": ["node_modules"]
 }
