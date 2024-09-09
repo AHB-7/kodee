@@ -18,12 +18,13 @@ export default function HeroContent() {
                 "M50,100 C75,150 125,150 150,100 C175,50 125,0 100,50 C75,100 25,50 50,100 Z",
             ],
             transition: {
-                duration: 10, // Control how fast the animation should run
+                duration: 10,
                 repeat: Infinity,
-                ease: "easeInOut", // Smooth transitions
+                ease: "easeInOut",
             },
         },
     };
+
     return (
         <div className="flex gap-6 flex-col px-2">
             <motion.h1
@@ -51,43 +52,59 @@ export default function HeroContent() {
             >
                 la oss innovere sammen
             </motion.h2>
-            <div className=" flex justify-center">
-                <svg
+
+            <motion.div
+                className="flex justify-center"
+                initial={{ opacity: 0, y: 250 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    delay: 2.4,
+                    duration: 0.8,
+                    ease: "easeInOut",
+                }}
+            >
+                <motion.svg
                     width="300"
                     height="300"
                     viewBox="0 0 200 200"
                     className="scale-100 hover:scale-110 transform-origin-center duration-500 hover:cursor-pointer"
+                    animate={{ rotate: [0, 360] }} // Rotate 360 degrees
+                    transition={{
+                        duration: 10, // Duration for one full rotation
+                        repeat: Infinity, // Keep rotating
+                        ease: "linear", // Continuous smooth rotation
+                    }}
                 >
                     {/* Dynamic blob animation */}
                     <motion.path
                         d="M50,100 C75,150 125,150 150,100 C175,50 125,0 100,50 C75,100 25,50 50,100 Z"
                         fill="none"
-                        stroke="green"
-                        strokeWidth="2"
+                        strokeWidth="1"
+                        className="stroke-brand-light"
                         variants={blobVariants}
                         animate="animate"
                     />
-                    {/* Central Circle */}
                     <circle
                         cx="100"
                         cy="100"
                         r="50"
-                        stroke="green"
-                        strokeWidth="2"
+                        className="stroke-brand-light"
+                        strokeWidth="1"
                         fill="none"
                     />
-                    {/* KONTAK Text */}
-                    <text
-                        x="100"
-                        y="105"
-                        textAnchor="middle"
-                        fontSize="20"
-                        fill="white"
-                    >
-                        KONTAK
-                    </text>
-                </svg>
-            </div>
+                </motion.svg>
+
+                {/* Static KONTAK text */}
+                <div
+                    className="absolute text-2xl font-bold"
+                    style={{
+                        top: "calc(60% - 0px)",
+                        left: "calc(50% - 50px)",
+                    }}
+                >
+                    KONTAK
+                </div>
+            </motion.div>
         </div>
     );
 }
