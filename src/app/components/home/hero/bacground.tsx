@@ -104,7 +104,7 @@ export default function Background() {
     // State to track hue value
 
     return (
-        <div className="absolute background-image lg-px-56 border-none top-0 -translate-y-44 h-screen">
+        <div className="absolute background-image lg-px-56 border-none top-0 -translate-y-44 h-s">
             <motion.div
                 className="background-image "
                 initial="hidden"
@@ -125,7 +125,7 @@ export default function Background() {
             </motion.div>
 
             <motion.div
-                className="background-image"
+                className="background-image "
                 initial="hidden"
                 animate="visible"
                 variants={imageVariantsTwo}
