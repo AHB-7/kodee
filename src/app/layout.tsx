@@ -2,6 +2,7 @@ import "./styles/globals.css";
 import { Antonio } from "next/font/google";
 import { Metadata } from "next";
 import Nav from "./components/nav/nav";
+import StartLogo from "./components/home/hero/logo";
 
 const antonio = Antonio({
     weight: ["400", "600", "700"],
@@ -26,8 +27,8 @@ export default function RootLayout({
     return (
         <html lang="no" className={antonio.className}>
             <body className="bg-brand-dark text-brand-light max-w-5xl mx-auto">
-                {children}
                 <Nav />
+                {children}
             </body>
         </html>
     );

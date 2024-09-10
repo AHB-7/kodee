@@ -14,6 +14,10 @@ body {
 }
 h1 {
     @apply text-6xl xs:text-7xl sm:text-8xl md:text-9xl text-center mt-12 font-extrabold;
+    text-shadow: 2px 2px 0px chartreuse;
+}
+h1 > span {
+    text-shadow: 2px 2px 0px rgb(254, 255, 252);
 }
 h2 {
     @apply text-3xl md:text-4xl font-bold;
@@ -51,4 +55,33 @@ input[type="text"] {
     content: "";
     z-index: -1;
     @apply absolute -bottom-1 left-1 hover:-bottom-0 hover:-left-0 bg-brand-primary w-full h-full duration-300;
+}
+.nav-link {
+    text-shadow: 2px 2px 0px chartreuse;
+    margin-right: 10px;
+    position: relative;
+}
+.nav-link:hover {
+    text-shadow: none;
+    scale: 95%;
+}
+.nav-link::after {
+    content: "";
+    background-image: url("../../../public/assets/to-tight.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0;
+    top: 65%;
+    transform: translateY(-50%) translateX(-30px);
+    transition: transform 0.5s ease;
+}
+.nav-link:hover::after {
+    transform: translateY(-50%) scale(1.1) translateX(10px);
+    opacity: 100%;
+}
+.tjenster-liste  > li > h3 {
+    @apply text-4xl font-extrabold;
 }

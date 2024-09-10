@@ -18,7 +18,7 @@ const config: Config = {
             },
             screens: {
                 sm: "600px",
-                xs: "350px",
+                xs: "380px",
             },
             colors: {
                 brand: {

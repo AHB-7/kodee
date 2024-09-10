@@ -104,21 +104,21 @@ export default function Background() {
     // State to track hue value
 
     return (
-        <div className="absolute background-image lg-px-56 border-none top-0 -translate-y-44">
+        <div className="absolute background-image lg-px-56 border-none top-0 -translate-y-44 h-screen">
             <motion.div
                 className="background-image "
                 initial="hidden"
                 animate="visible"
                 variants={imageVariantsOne}
             >
-                <div className=" max-w-[12rem] w-full h-3/6 sticky top-0">
+                <div className=" max-w-[12rem] w-full h-3/6 relative">
                     <Image
                         src="/1.png"
                         alt="Background Image"
                         sizes="300"
                         fill
                         style={{ objectFit: "cover" }}
-                        className="rounded-full"
+                        className="rounded-full px-2"
                         priority
                     />
                 </div>
@@ -130,14 +130,14 @@ export default function Background() {
                 animate="visible"
                 variants={imageVariantsTwo}
             >
-                <div className="max-w-[12rem] w-full h-3/6 sticky top-0">
+                <div className="max-w-[12rem] w-full h-3/6 relative">
                     <Image
                         src="/2.png"
                         alt="Background Image"
                         fill
                         style={{ objectFit: "cover" }}
                         sizes="300"
-                        className="rounded-full"
+                        className="rounded-full px-2"
                         priority
                     />
                 </div>
@@ -149,14 +149,14 @@ export default function Background() {
                 animate="visible"
                 variants={imageVariantsThree}
             >
-                <div className=" max-w-[12rem] w-full h-3/6 sticky top-0 ">
+                <div className=" max-w-[12rem] w-full h-3/6 relative">
                     <Image
                         src="/3.png"
                         alt="Background Image"
                         fill
                         sizes="300"
                         style={{ objectFit: "cover" }}
-                        className="rounded-full"
+                        className="rounded-full px-2"
                         priority
                     />
                 </div>
@@ -168,13 +168,13 @@ export default function Background() {
                 animate="visible"
                 variants={imageVariantsFour}
             >
-                <div className="max-w-[12rem] w-full h-3/6 sticky top-0">
+                <div className="max-w-[12rem] w-full h-3/6 relative">
                     <Image
                         src="/4.png"
                         alt="Background Image"
                         sizes="300"
                         style={{ objectFit: "cover" }}
-                        className="rounded-full"
+                        className="rounded-full px-2"
                         priority
                         fill
                     />

@@ -5,21 +5,20 @@ import { motion, useAnimationFrame } from "framer-motion";
 import { useState } from "react";
 
 export default function StartLogo() {
-    const [progress, setProgress] = useState(0);
+    // const [progress, setProgress] = useState(0);
 
-    useAnimationFrame((t) => {
-        const duration = 2400; // 2.4 seconds
-        const currentProgress = Math.min((t / duration) * 100, 100);
-        setProgress(Number(currentProgress.toFixed(0)));
-    });
+    // useAnimationFrame((t) => {
+    //     const duration = 2400; // 2.4 seconds
+    //     const currentProgress = Math.min((t / duration) * 100, 100);
+    //     setProgress(Number(currentProgress.toFixed(0)));
+    // });
 
     const circleRadius = 50;
-    // const circleCircumference = 2 * Math.PI * circleRadius;
 
     return (
-        <div className=" w-full mx-auto -z-20 max-w-5xl relative">
+        <div className="w-full mx-auto max-w-5xl relative">
             <motion.div
-                className="absolute top-0 right-0"
+                className=""
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: 1, y: 10 }}
                 transition={{
@@ -29,7 +28,7 @@ export default function StartLogo() {
                 }}
             >
                 <Image
-                    className=" w-24"
+                    className=" w-24 p-2"
                     src="/assets/kodee-log-light.svg"
                     alt="Logo av Kodee som visser navn på Kodee me en linje som går i midten av logo"
                     width={250}
