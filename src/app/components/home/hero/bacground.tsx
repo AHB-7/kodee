@@ -113,7 +113,7 @@ export default function Background() {
             >
                 <div className=" max-w-[12rem] w-full h-3/6 relative">
                     <Image
-                        src="/1.png"
+                        src="/background/1.png"
                         alt="Background Image"
                         sizes="300"
                         fill
@@ -132,7 +132,7 @@ export default function Background() {
             >
                 <div className="max-w-[12rem] w-full h-3/6 relative">
                     <Image
-                        src="/2.png"
+                        src="/background/2.png"
                         alt="Background Image"
                         fill
                         style={{ objectFit: "cover" }}
@@ -170,7 +170,7 @@ export default function Background() {
             >
                 <div className="max-w-[12rem] w-full h-3/6 relative">
                     <Image
-                        src="/4.png"
+                        src="/background/4.png"
                         alt="Background Image"
                         sizes="300"
                         style={{ objectFit: "cover" }}
