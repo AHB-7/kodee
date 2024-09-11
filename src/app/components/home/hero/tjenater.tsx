@@ -1,13 +1,13 @@
 "use client";
 
-import { motion, useInView, Variants } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 
-// Define types for the props in ServiceItem
 interface ServiceItemProps {
     service: string;
     index: number;
-    variants: Variants; // Framer Motion's built-in type for variants
+    variants: Variants;
 }
 
 export default function Tjenster() {
@@ -26,46 +26,69 @@ export default function Tjenster() {
         "Kontinuerlig Forbedring",
     ];
 
-    // Animation variants for each list item
     const listItemVariants: Variants = {
-        hidden: { opacity: 0.2 },
-        visible: { opacity: 1, transition: { duration: 0.6 } },
+        hidden: { opacity: 0.4 }, // Hidden state (y-offset to move up on scroll)
+        visible: { opacity: 1, transition: { duration: 0.4 } }, // Visible state (reset y-offset)
     };
+    const refImage = useRef(null);
+
+    const { scrollYProgress } = useScroll({
+        target: refImage,
+        offset: ["start 0.9", "0.25 start"], // Animation offset based on scroll position
+    });
+    const rotate = useTransform(scrollYProgress, [0, 1], [0, 12]);
+    const scale = useTransform(scrollYProgress, [0, 0.8], [0, 0.8]);
+    const y = useTransform(scrollYProgress, [0, 0.9], [-200, 0]);
 
     return (
-        <div className="flex flex-col justify-start pt-8 px-1 sm:pt-0 sm:justify-center sm:pb-12 items-start gap-8 h-screen">
-            <h2 className="text-6xl">Tjenester</h2>
-            <motion.ul className="tjenster-liste">
-                {services.map((service, index) => (
-                    <ServiceItem
-                        key={index}
-                        service={service}
-                        index={index}
-                        variants={listItemVariants}
-                    />
-                ))}
-            </motion.ul>
-        </div>
+        <section className="flex items-center justify-center flex-wrap-reverse lg:justify-between">
+            <div className="flex flex-col justify-start pt-8 px-1 sm:pt-0 sm:justify-center sm:pb-12 items-start gap-8 h-screen">
+                <h2 className="text-6xl">Tjenester</h2>
+                <motion.ul className="tjenster-liste">
+                    {services.map((service, index) => (
+                        <ServiceItem
+                            key={index}
+                            service={service}
+                            index={index}
+                            variants={listItemVariants}
+                        />
+                    ))}
+                </motion.ul>
+            </div>
+            <motion.div
+                className=" sepia object-cover"
+                ref={refImage}
+                style={{ rotate, scale, y }}
+            >
+                <Image
+                    className="rounded-xl  "
+                    src="/assets/api.jpeg"
+                    alt=" "
+                    width={500}
+                    height={200}
+                />
+            </motion.div>
+        </section>
     );
 }
 
-// Separate component for each service item
 function ServiceItem({ service, index, variants }: ServiceItemProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, {
-        amount: "all",
-        // once: true,
-        margin: "-110px",
+
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["end 0.86", "0.25 start"], // Animation offset based on scroll position
     });
+
+    const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]); // Opacity increases as the item scrolls into view
 
     return (
         <motion.li
             ref={ref}
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            style={{ opacity }}
             variants={variants}
             custom={index}
-            style={{ transitionDelay: `${index * 0.5}s` }} // Optional staggered delay
         >
             <h3>{service}</h3>
         </motion.li>

@@ -45,7 +45,16 @@ export default function Nav() {
 
     return (
         <>
-            <div className="flex justify-between items-center max-w-xl px-2 w-full text-brand-light fixed bottom-8 text-4xl font-extrabold z-20">
+            <motion.div
+                className="flex justify-between items-center max-w-xl px-2 w-full text-brand-light fixed bottom-8 text-4xl font-extrabold z-20"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.4,
+                    ease: "easeIn",
+                    delay: 1.2,
+                }}
+            >
                 <Link
                     href=""
                     className="flex items-center justify-center size-14 rounded-full group hover:bg-brand-primary hover:bg-opacity-60 duration-300"
@@ -73,7 +82,7 @@ export default function Nav() {
                         className="group-hover:scale-125 duration-300"
                     />
                 </Link>
-            </div>
+            </motion.div>
 
             <motion.nav
                 className="fixed bottom-0 bg-brand-dark w-full h-screen text-brand-light flex flex-col py-4 justify-between z-10"

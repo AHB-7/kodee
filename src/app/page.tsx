@@ -13,6 +13,7 @@ export default function Home() {
                 <section className="overflow-hidden">
                     <HeroHome />
                     <Tjenster />
+                    <Tjenster />
                 </section>
             </main>
         </>

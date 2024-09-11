@@ -11,8 +11,8 @@ export default function HeroHome() {
                     <StartLogo />
                 </div>
             </div>
-            <div className="flex flex-col justify-start gap-8 pb-12 items-start px-1 sm:items-center h-screen translate-y-12">
-                <div>
+            <div className="flex relative flex-col justify-start gap-8 pb-12 items-start px-1 sm:items-center h-screen">
+                <div className="sticky top-0 translate-y-12">
                     <motion.h1
                         className=" text-start font-extrabold pb-2 uppercase sm:text-center"
                         initial={{
@@ -51,9 +51,9 @@ export default function HeroHome() {
                     </motion.h2>
                 </div>
                 <motion.div
-                    className="self-center hover:"
+                    className="self-center"
                     initial={{ opacity: 0, y: 250 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 40 }}
                     transition={{
                         duration: 0.6,
                         ease: "easeIn",
