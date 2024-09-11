@@ -47,7 +47,7 @@ input[type="text"] {
 }
 .background-image {
     @apply w-full max-w-4xl opacity-70 h-full flex items-center justify-center -z-10  blur-0 hover:blur-sm;
-    filter: sepia(0.8) invert(0.2);
+    filter: blur(1px) grayscale(0.2);
 }
 .primary-btn {
     @apply bg-brand-light text-brand-dark font-bold py-2 px-12 relative hover:bg-brand-light text-xl duration-300;

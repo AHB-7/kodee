@@ -151,7 +151,7 @@ export default function Background() {
             >
                 <div className=" max-w-[12rem] w-full h-3/6 relative">
                     <Image
-                        src="/3.png"
+                        src="/background/3.png"
                         alt="Background Image"
                         fill
                         sizes="300"
