@@ -82,6 +82,6 @@ input[type="text"] {
     transform: translateY(-50%) scale(1.1) translateX(10px);
     opacity: 100%;
 }
-.tjenster-liste  > li > h3 {
+.tjenster-liste > li > h3 {
     @apply text-4xl font-extrabold;
 }

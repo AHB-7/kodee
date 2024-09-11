@@ -1,13 +1,13 @@
 "use client";
 
-import { motion, useScroll, useTransform, Variants } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
 interface ServiceItemProps {
-    service: string;
-    index: number;
-    variants: Variants;
+    children: string;
+    progress: any;
+    range: [number, number];
 }
 
 export default function Tjenster() {
@@ -26,73 +26,56 @@ export default function Tjenster() {
         "Kontinuerlig Forbedring",
     ];
 
-    const listItemVariants: Variants = {
-        hidden: { opacity: 0.4 },
-        visible: { opacity: 1, transition: { duration: 0.4 } },
-    };
-    const refImage = useRef(null);
-
+    const element = useRef(null);
     const { scrollYProgress } = useScroll({
-        target: refImage,
-        offset: ["start 0.9", "0.25 start"],
+        target: element,
+        offset: ["start 0.5", "0 start"],
     });
-    const rotate = useTransform(scrollYProgress, [0, 1], [0, 12]);
-    const scale = useTransform(scrollYProgress, [0, 0.8], [0.2, 0.8]); // Updated scale range for smoother effect
-    const y = useTransform(scrollYProgress, [0, 0.9], [-200, 0]);
 
     return (
-        <section className="flex items-center justify-center flex-wrap-reverse lg:justify-between">
-            <div className="flex flex-col justify-start pt-8 px-1 sm:pt-0 sm:justify-center sm:pb-12 items-start gap-8 h-screen">
+        <section
+            className="flex items-center justify-center flex-wrap-reverse lg:justify-between"
+            ref={element}
+        >
+            <div className="flex flex-col justify-start pt-8 px-1 sm:pt-0 sm:justify-center sm:pb-12 items-start gap-8">
                 <h2 className="text-6xl">Tjenester</h2>
                 <motion.ul className="tjenster-liste">
-                    {services.map((service, index) => (
-                        <ServiceItem
-                            key={index}
-                            service={service}
-                            index={index}
-                            variants={listItemVariants}
-                        />
-                    ))}
+                    {services.map((service, i) => {
+                        const start = i / services.length;
+                        const end = (i + 1) / services.length;
+                        return (
+                            <Word
+                                key={i}
+                                range={[start, end]}
+                                progress={scrollYProgress}
+                            >
+                                {service}
+                            </Word>
+                        );
+                    })}
                 </motion.ul>
             </div>
-            <motion.div
-                className=" sepia object-cover rounded-xl"
-                ref={refImage}
-                style={{ rotate, scale, y }}
-                transition={{ duration: 0.6, ease: "easeInOut" }} // Added easing and duration
+            {/* <motion.div
+                className="sepia object-cover rounded-xl"
+                transition={{ duration: 0.6, ease: "easeInOut" }}
             >
                 <Image
                     className="rounded-xl pt-12"
                     src="/assets/api.jpeg"
-                    alt=" "
+                    alt="Service Image"
                     width={500}
                     height={200}
                 />
-            </motion.div>
+            </motion.div> */}
         </section>
     );
 }
 
-function ServiceItem({ service, index, variants }: ServiceItemProps) {
-    const ref = useRef(null);
-
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["end 0.86", "0.25 start"],
-    });
-
-    const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-
+const Word = ({ children, range, progress }: ServiceItemProps) => {
+    const opacity = useTransform(progress, range, [0.4, 1]);
     return (
-        <motion.li
-            ref={ref}
-            initial="hidden"
-            className="opacity-20"
-            style={{ opacity }}
-            variants={variants}
-            custom={index}
-        >
-            <h3>{service}</h3>
+        <motion.li style={{ opacity }}>
+            <h3>{children}</h3>
         </motion.li>
     );
-}
+};
