@@ -27,17 +27,17 @@ export default function Tjenster() {
     ];
 
     const listItemVariants: Variants = {
-        hidden: { opacity: 0.4 }, // Hidden state (y-offset to move up on scroll)
-        visible: { opacity: 1, transition: { duration: 0.4 } }, // Visible state (reset y-offset)
+        hidden: { opacity: 0.4 },
+        visible: { opacity: 1, transition: { duration: 0.4 } },
     };
     const refImage = useRef(null);
 
     const { scrollYProgress } = useScroll({
         target: refImage,
-        offset: ["start 0.9", "0.25 start"], // Animation offset based on scroll position
+        offset: ["start 0.9", "0.25 start"],
     });
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 12]);
-    const scale = useTransform(scrollYProgress, [0, 0.8], [0, 0.8]);
+    const scale = useTransform(scrollYProgress, [0, 0.8], [0.2, 0.8]); // Updated scale range for smoother effect
     const y = useTransform(scrollYProgress, [0, 0.9], [-200, 0]);
 
     return (
@@ -56,12 +56,13 @@ export default function Tjenster() {
                 </motion.ul>
             </div>
             <motion.div
-                className=" sepia object-cover"
+                className=" sepia object-cover rounded-xl"
                 ref={refImage}
                 style={{ rotate, scale, y }}
+                transition={{ duration: 0.6, ease: "easeInOut" }} // Added easing and duration
             >
                 <Image
-                    className="rounded-xl  "
+                    className="rounded-xl pt-12"
                     src="/assets/api.jpeg"
                     alt=" "
                     width={500}
@@ -77,15 +78,16 @@ function ServiceItem({ service, index, variants }: ServiceItemProps) {
 
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["end 0.86", "0.25 start"], // Animation offset based on scroll position
+        offset: ["end 0.86", "0.25 start"],
     });
 
-    const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]); // Opacity increases as the item scrolls into view
+    const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
 
     return (
         <motion.li
             ref={ref}
             initial="hidden"
+            className="opacity-20"
             style={{ opacity }}
             variants={variants}
             custom={index}
