@@ -16,6 +16,7 @@ h1 {
     @apply text-6xl xs:text-7xl sm:text-8xl md:text-9xl text-center mt-12 font-extrabold;
     text-shadow: 2px 2px 0px chartreuse;
 }
+.shadow,
 h1 > span {
     text-shadow: 2px 2px 0px rgb(254, 255, 252);
 }

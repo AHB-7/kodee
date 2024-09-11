@@ -34,7 +34,7 @@ export default function Tjenster() {
 
     return (
         <section
-            className="flex items-center justify-center flex-wrap-reverse lg:justify-between"
+            className="flex items-center justify-center flex-wrap-reverse lg:justify-between relative"
             ref={element}
         >
             <div className="flex flex-col justify-start pt-8 px-1 sm:pt-0 sm:justify-center sm:pb-12 items-start gap-8">
@@ -55,18 +55,18 @@ export default function Tjenster() {
                     })}
                 </motion.ul>
             </div>
-            {/* <motion.div
-                className="sepia object-cover rounded-xl"
+            <motion.div
+                className="h-full -z-10 mx-auto absolute top-0 right-0 left-0 md:relative"
                 transition={{ duration: 0.6, ease: "easeInOut" }}
             >
                 <Image
-                    className="rounded-xl pt-12"
-                    src="/assets/api.jpeg"
+                    className="rounded-xl invert blur-sm brightness-90 md:blur-0 md:invert-0 md:sepia rotate-12"
+                    src="/background/ui.jpeg"
                     alt="Service Image"
-                    width={500}
-                    height={200}
+                    width={400}
+                    height={400}
                 />
-            </motion.div> */}
+            </motion.div>
         </section>
     );
 }
@@ -74,7 +74,10 @@ export default function Tjenster() {
 const Word = ({ children, range, progress }: ServiceItemProps) => {
     const opacity = useTransform(progress, range, [0.4, 1]);
     return (
-        <motion.li style={{ opacity }}>
+        <motion.li
+            style={{ opacity }}
+            className="text-brand-primary md:text-brand-light "
+        >
             <h3>{children}</h3>
         </motion.li>
     );
