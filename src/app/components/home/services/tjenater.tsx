@@ -29,7 +29,7 @@ export default function Tjenster() {
     const element = useRef(null);
     const { scrollYProgress } = useScroll({
         target: element,
-        offset: ["start 0.5", "start start"],
+        offset: ["start 0.85", "start start"],
     });
 
     return (
