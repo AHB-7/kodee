@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import StartLogo from "./logo";
+import StartLogo from "../logo";
 
 export default function HeroHome() {
     return (

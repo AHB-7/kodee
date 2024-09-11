@@ -1,7 +1,8 @@
 import React from "react";
-import HeroHome from "./components/home/hero/hero-home";
-import Background from "./components/home/hero/bacground";
-import Tjenster from "./components/home/hero/tjenater";
+import Background from "../components/home/hero/bacground";
+import Tjenster from "../components/home/services/tjenater";
+import HeroHome from "../components/home/hero/hero-home";
+import Priser from "../components/home/price/pris";
 
 export default function Home() {
     return (
@@ -13,7 +14,7 @@ export default function Home() {
                 <section className="overflow-hidden">
                     <HeroHome />
                     <Tjenster />
-                    <Tjenster />
+                    <Priser />
                 </section>
             </main>
         </>

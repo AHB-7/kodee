@@ -3,7 +3,7 @@
 import { delay, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import StartLogo from "../home/hero/logo";
+import StartLogo from "../home/logo";
 import { IoPaperPlaneSharp } from "react-icons/io5";
 import Image from "next/image";
 

@@ -1,8 +1,7 @@
-import "./styles/globals.css";
+import "../styles/globals.css";
 import { Antonio } from "next/font/google";
 import { Metadata } from "next";
-import Nav from "./components/nav/nav";
-import StartLogo from "./components/home/hero/logo";
+import Nav from "../components/nav/nav";
 
 const antonio = Antonio({
     weight: ["400", "600", "700"],
