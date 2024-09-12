@@ -23,7 +23,7 @@ export default function HeroHome() {
                         transition={{
                             duration: 0.8,
                             ease: "easeIn",
-                            delay: 1.3,
+                            delay: 0.1,
                         }}
                     >
                         Fra{" "}
@@ -44,7 +44,7 @@ export default function HeroHome() {
                         transition={{
                             duration: 0.8,
                             ease: "easeIn",
-                            delay: 1.3,
+                            delay: 0.4,
                         }}
                     >
                         Kom i gang med å identifisere din bedrift!
@@ -57,7 +57,7 @@ export default function HeroHome() {
                     transition={{
                         duration: 0.6,
                         ease: "easeIn",
-                        delay: 1.5,
+                        delay: 0.7,
                     }}
                 >
                     <button className="primary-btn"> KONTAKT</button>
