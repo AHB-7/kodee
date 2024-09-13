@@ -23,6 +23,16 @@ h1 > span {
 h2 {
     @apply text-3xl md:text-4xl font-bold;
 }
+.under-title-hero {
+    @apply text-center  text-lg pt-8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    word-spacing: 5px;
+}
+.under-title-hero > span {
+    @apply text-brand-primary;
+    word-spacing: 0px;
+}
 h3 {
     @apply text-2xl md:text-3xl;
 }
@@ -42,6 +52,7 @@ input[type="text"] {
 .task > p {
     @apply py-2;
 }
+
 .task {
     @apply border ps-4 flex items-center justify-between max-h-72;
 }
@@ -50,7 +61,7 @@ input[type="text"] {
     filter: blur(1px) grayscale(0.2);
 }
 .primary-btn {
-    @apply bg-brand-light text-brand-dark font-bold py-2 px-12 relative hover:bg-brand-light text-xl duration-300;
+    @apply bg-brand-light text-brand-dark font-light py-1 px-8 relative hover:bg-brand-light text-lg duration-300;
 }
 .primary-btn::before {
     content: "";

@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Background from "../components/home/hero/bacground";
 import Tjenster from "../components/home/services/tjenater";
 import HeroHome from "../components/home/hero/hero-home";
-import Priser from "../components/home/price/pris";
 import LogoInro from "../components/home/hero/logo-intro";
+import Message from "../components/home/message/message";
 
 export default function Home() {
     const [animationComplete, setAnimationComplete] = useState(false);
@@ -26,7 +26,7 @@ export default function Home() {
                     <section className="overflow-hidden">
                         <HeroHome />
                         <Tjenster />
-                        <Priser />
+                        <Message />
                     </section>
                 )}
             </main>

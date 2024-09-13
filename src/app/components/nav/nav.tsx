@@ -1,18 +1,51 @@
 "use client";
 
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import StartLogo from "../home/logo";
-import { IoPaperPlaneSharp } from "react-icons/io5";
 import Image from "next/image";
 
 export default function Nav() {
     const [isActive, setIsActive] = useState(false);
 
-    // Bouncy scroll-up effect
+    const minifyVariants = {
+        hidden: {
+            opacity: 0,
+            y: "100%",
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: 1,
+                duration: 0.6,
+            },
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                delay: 1,
+                damping: 15,
+                delayChildren: 0.8,
+            },
+        },
+    };
+    // Bouncy scroll-up effect for the container
     const containerVariants = {
-        hidden: { opacity: 0, y: "100%" },
+        hidden: {
+            opacity: 0,
+            y: "100%",
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: 0.5,
+                duration: 0.6,
+            },
+        },
         visible: {
             opacity: 1,
             y: 0,
@@ -20,13 +53,21 @@ export default function Nav() {
                 type: "spring",
                 stiffness: 100,
                 damping: 15,
-                delayChildren: 0.8, // Delay before starting link animations
+                delayChildren: 0.8,
             },
         },
     };
 
+    // Link animation variants
     const linkVariants = {
-        hidden: { opacity: 1, y: -100 },
+        hidden: (i: number) => ({
+            opacity: 1,
+            y: 500, // Falling down when hiding
+            transition: {
+                delay: i * 0.05,
+                duration: 0.2,
+            },
+        }),
         visible: (i: number) => ({
             opacity: 1,
             y: 0,
@@ -38,9 +79,10 @@ export default function Nav() {
     };
 
     const links = [
-        { href: "/PROJECTS", label: "BSTILL TIME" },
-        { href: "/PROJECTS", label: "PROJEKTER" },
-        { href: "/about", label: "OM KODEE" },
+        { href: "/", label: "Hjem" },
+        { href: "/PROJECTS", label: "Prosjekter" },
+        { href: "/about", label: "Bestill Time" },
+        { href: "/blog", label: "Blog" },
     ];
 
     return (
@@ -85,15 +127,16 @@ export default function Nav() {
             </motion.div>
 
             <motion.nav
-                className="fixed bottom-0 bg-brand-dark w-full h-screen text-brand-light flex flex-col py-4 justify-between z-10"
+                className="fixed bottom-0 bg-brand-dark w-full h-full text-brand-light flex flex-col py-4 justify-between z-10"
                 variants={containerVariants}
                 initial="hidden"
                 animate={isActive ? "visible" : "hidden"}
             >
-                <div className="flex items-center justify-center mx-auto scale-150">
+                {/* <div className="flex items-center justify-center mx-auto scale-150">
                     <StartLogo />
-                </div>
-                <div className="z-10 flex flex-col justify-center xs:items-center">
+                </div> */}
+                <div></div>
+                <div className="z-10 flex flex-col justify-center w-full max-w-sm mx-auto pb-8">
                     {links.map((link, i) => (
                         <motion.div
                             key={link.label}
@@ -110,6 +153,16 @@ export default function Nav() {
                             </Link>
                         </motion.div>
                     ))}
+                    <motion.div
+                        className=" flex gap-3 w-full max-w-xs pe-4 justify-end items-end mt-4"
+                        variants={minifyVariants}
+                        initial="hidden"
+                        animate={isActive ? "visible" : "hidden"}
+                    >
+                        <Link href="/" className="text-xl font-bold">
+                            Om Kodee
+                        </Link>
+                    </motion.div>
                 </div>
                 <div></div>
             </motion.nav>

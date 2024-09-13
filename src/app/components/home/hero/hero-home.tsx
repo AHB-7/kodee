@@ -11,10 +11,10 @@ export default function HeroHome() {
                     <StartLogo />
                 </div>
             </div>
-            <div className="flex relative flex-col justify-start gap-8 pb-12 items-start px-1 sm:items-center h-screen">
-                <div className="sticky top-0 translate-y-12">
+            <div className="flex relative flex-col justify-start gap-2 items-start px-1 sm:items-center h-screen">
+                <div className="sticky top-0 mx-auto">
                     <motion.h1
-                        className=" text-start font-extrabold pb-2 uppercase sm:text-center"
+                        className="text-start font-extrabold pb-2 uppercase sm:text-center"
                         initial={{
                             opacity: 0,
                             x: -250,
@@ -38,7 +38,7 @@ export default function HeroHome() {
                         </span>
                     </motion.h1>
                     <motion.h2
-                        className="text-end sm:text-center p-0 text-3xl pt-8 pb-2"
+                        className="under-title-hero"
                         initial={{ opacity: 0, x: 250 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
@@ -47,7 +47,8 @@ export default function HeroHome() {
                             delay: 0.4,
                         }}
                     >
-                        Kom i gang med å identifisere din bedrift!
+                        Kom i gang med å identifisere <br />{" "}
+                        <span>din idee!</span>
                     </motion.h2>
                 </div>
                 <motion.div
