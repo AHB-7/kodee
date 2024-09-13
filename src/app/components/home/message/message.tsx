@@ -1,12 +1,22 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io";
 import { IoArrowDownSharp } from "react-icons/io5";
 export default function Message() {
     return (
-        <section className="flex flex-col items-center justify-center gap-8 h-screen px-6 lg:px-16">
+        <section className="flex flex-col items-center justify-center gap-8 h-screen px-6 lg:px-16 relative">
+            <div className=" absolute top-0 w-screen h-full rotate-180 opacity-30 -z-10">
+                <Image
+                    src="/background/123.jpeg"
+                    fill
+                    alt=""
+                    className="object-cover"
+                />
+                <div className=" h-screen w-full bg-gradient-to-t absolute from-brand-dark to-transparent "></div>
+            </div>
             <div className="mb-6 lg:mb-0 text-center lg:text-left">
                 <h2 className="text-2xl lg:text-4xl font-semibold text-brand-light pb-4">
                     Hva nå?
