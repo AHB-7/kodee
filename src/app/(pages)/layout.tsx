@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="no" className={antonio.className}>
-            <body className="bg-brand-dark text-brand-light max-w-5xl mx-auto">
+            <body className="bg-brand-dark text-brand-light mx-auto">
                 <Nav />
                 {children}
             </body>

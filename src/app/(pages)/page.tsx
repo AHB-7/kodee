@@ -16,8 +16,8 @@ export default function Home() {
 
     return (
         <>
-            <main className="w-full max-w-5xl mx-auto">
-                <section className="center-section overflow-hidden">
+            <main className="w-full mx-auto">
+                <section className="center-section overflow-visible">
                     {!animationComplete && (
                         <LogoInro onComplete={handleLogoInroComplete} />
                     )}

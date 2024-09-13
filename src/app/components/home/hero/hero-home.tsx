@@ -12,7 +12,7 @@ export default function HeroHome() {
                 </div>
             </div>
             <div className="flex relative flex-col justify-start gap-2 items-start px-1 sm:items-center h-screen">
-                <div className="sticky top-0 mx-auto">
+                <div className="sticky top-0 ms-4 sm:mx-auto">
                     <motion.h1
                         className="text-start font-extrabold pb-2 uppercase sm:text-center"
                         initial={{

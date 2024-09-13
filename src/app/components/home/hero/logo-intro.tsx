@@ -19,10 +19,11 @@ export default function LogoInro({ onComplete }: LogoInroProps) {
 
     return (
         <motion.section
-            className="flex justify-center items-center h-screen"
+            className="flex justify-center items-center h-screen overflow-visible"
             onAnimationComplete={handleAnimationComplete}
             animate={{
-                scale: [1, 0],
+                scale: [1, 29],
+                opacity: [1, 0],
             }}
             transition={{
                 delay: 3.5,
@@ -62,8 +63,8 @@ export default function LogoInro({ onComplete }: LogoInroProps) {
                     }}
                     animate={{
                         y: [0, -135, 60, 0],
-                        scaleX: [1, 1.2, 1.7, 1],
-                        scaleY: [1, 0.6, 0.3, 1],
+                        scaleX: [1.2, 1.2, 1.7, 1],
+                        scaleY: [0.95, 0.6, 0.3, 1],
                     }}
                     transition={{
                         type: "spring",
