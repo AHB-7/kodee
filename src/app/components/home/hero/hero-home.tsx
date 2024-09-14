@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import StartLogo from "../logo";
+import Image from "next/image";
 
 export default function HeroHome() {
     return (
@@ -12,6 +13,15 @@ export default function HeroHome() {
                 </div>
             </div>
             <div className="flex relative flex-col justify-start gap-2 items-start px-1 sm:items-center h-screen">
+                <div className=" absolute top-0 w-screen h-full rotate-180 opacity-30 -z-10">
+                    <Image
+                        src="/background/123.jpeg"
+                        fill
+                        alt=""
+                        className="object-cover"
+                    />
+                    <div className=" h-screen w-full bg-gradient-to-b absolute from-brand-dark to-transparent "></div>
+                </div>
                 <div className="sticky top-0 ms-4 sm:mx-auto">
                     <motion.h1
                         className="text-start font-extrabold pb-2 uppercase sm:text-center"

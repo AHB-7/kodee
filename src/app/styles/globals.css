@@ -43,8 +43,8 @@ h4 {
     @apply text-brand-light p-4 border-b-2 border-brand-primary;
 }
 
-input[type="text"] {
-    @apply border-2 border-brand-primary focus:outline-none py-1 px-2 bg-inherit border-r-0;
+input {
+    @apply border-2 border-brand-primary focus:outline-none py-1 px-2 bg-inherit;
 }
 .tasks {
     @apply flex items-start flex-wrap gap-2 pt-6 max-w-4xl mx-auto;
