@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import StartLogo from "../logo";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroHome() {
     return (
@@ -71,7 +72,12 @@ export default function HeroHome() {
                         delay: 0.7,
                     }}
                 >
-                    <button className="primary-btn"> KONTAKT</button>
+                    <button className="primary-btn">
+                        {" "}
+                        <Link href="/message" className="pb-2">
+                            KONTAKT
+                        </Link>{" "}
+                    </button>
                 </motion.div>
             </div>
         </>

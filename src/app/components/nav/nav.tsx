@@ -81,7 +81,6 @@ export default function Nav() {
     const links = [
         { href: "/", label: "Hjem" },
         { href: "/PROJECTS", label: "Prosjekter" },
-        { href: "/about", label: "Bestill Time" },
         { href: "/blog", label: "Blog" },
     ];
 
@@ -98,7 +97,7 @@ export default function Nav() {
                 }}
             >
                 <Link
-                    href=""
+                    href="/message"
                     className="flex items-center justify-center size-14 rounded-full group hover:bg-brand-primary hover:bg-opacity-60 duration-300"
                 >
                     <Image
@@ -113,7 +112,7 @@ export default function Nav() {
                     {isActive ? "CLOSE" : "MENU"}
                 </button>
                 <Link
-                    href=""
+                    href="tel:+479898478"
                     className="flex items-center justify-center size-14 rounded-full group hover:bg-brand-primary hover:bg-opacity-60 duration-300"
                 >
                     <Image
