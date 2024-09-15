@@ -38,7 +38,7 @@ export default function Message() {
                     </span>
                 </Link>
                 <Link
-                    href="/timebestilling"
+                    href="https://kodee.reservio.com"
                     className="flex items-center justify-center gap-2 border px-6 py-2  hover:text-brand-primary hover:scale-105 duration-300 active:border-brand-primary"
                 >
                     Bestill En Time{" "}
