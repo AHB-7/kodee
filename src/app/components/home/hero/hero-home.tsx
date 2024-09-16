@@ -9,7 +9,7 @@ export default function HeroHome() {
     // Define the variants for each span
     const spanVariants = {
         initial: { opacity: 0, x: -50 },
-        animate: (customDelay) => ({
+        animate: (customDelay: number) => ({
             opacity: 1,
             x: 0,
             transition: {
