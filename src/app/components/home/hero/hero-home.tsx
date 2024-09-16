@@ -49,7 +49,7 @@ export default function HeroHome() {
                         </span>
                     </motion.h1>
                     <motion.h2
-                        className="under-title-hero"
+                        className="under-title-hero "
                         initial={{ opacity: 0, x: 250 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{

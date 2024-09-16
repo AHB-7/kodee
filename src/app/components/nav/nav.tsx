@@ -80,7 +80,7 @@ export default function Nav() {
 
     const links = [
         { href: "/", label: "Hjem" },
-        { href: "/PROJECTS", label: "Prosjekter" },
+        { href: "/projects", label: "Prosjekter" },
         { href: "/blog", label: "Blog" },
     ];
 
