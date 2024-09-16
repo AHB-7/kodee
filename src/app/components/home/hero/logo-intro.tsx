@@ -22,7 +22,7 @@ export default function LogoInro({ onComplete }: LogoInroProps) {
             className="flex justify-center items-center h-screen overflow-visible"
             onAnimationComplete={handleAnimationComplete}
             animate={{
-                scale: [1, 29],
+                scale: [1, 0],
                 opacity: [1, 0],
             }}
             transition={{

@@ -62,7 +62,7 @@ export default function Nav() {
     const linkVariants = {
         hidden: (i: number) => ({
             opacity: 1,
-            y: 500, // Falling down when hiding
+            y: 500,
             transition: {
                 delay: i * 0.05,
                 duration: 0.2,
@@ -81,7 +81,7 @@ export default function Nav() {
     const links = [
         { href: "/", label: "Hjem" },
         { href: "/projects", label: "Prosjekter" },
-        { href: "/blog", label: "Blog" },
+        // { href: "/blog", label: "Blog" },
     ];
 
     return (
@@ -94,6 +94,7 @@ export default function Nav() {
                     duration: 0.4,
                     ease: "easeIn",
                     delay: 1.2,
+                    once: true,
                 }}
             >
                 <Link
@@ -147,6 +148,7 @@ export default function Nav() {
                             <Link
                                 href={link.href}
                                 className="text-7xl font-extrabold"
+                                onClick={() => setIsActive(false)} // Close menu when a link is clicked
                             >
                                 {link.label}
                             </Link>
@@ -158,7 +160,7 @@ export default function Nav() {
                         initial="hidden"
                         animate={isActive ? "visible" : "hidden"}
                     >
-                        <Link href="/" className="text-xl font-bold">
+                        <Link href="#" className="text-xl font-bold opacity-55">
                             Om Kodee
                         </Link>
                     </motion.div>

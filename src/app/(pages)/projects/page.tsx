@@ -10,10 +10,6 @@ export default function Page() {
                 <p className="text-center py-4 text-xl pt-12">
                     Her er en oversikt over alle prosjekter som ble utført.
                 </p>
-                <p className="bg-brand-error p-4 text-center text-xl font-extrabold">
-                    {" "}
-                    Siden bearbeides
-                </p>
             </section>
             <section>
                 {projects.map((project, index) => {

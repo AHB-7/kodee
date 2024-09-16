@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 interface CardProps {
     title: string;
@@ -10,8 +11,16 @@ interface CardProps {
     src: string;
     description: string;
     i: number;
+    link: string;
 }
-export default function Card({ i, title, tools, src, description }: CardProps) {
+export default function Card({
+    i,
+    title,
+    tools,
+    src,
+    description,
+    link,
+}: CardProps) {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,
@@ -41,6 +50,11 @@ export default function Card({ i, title, tools, src, description }: CardProps) {
                 <h2>{title}</h2>
                 <p>{tools}</p>
                 <p>{description}</p>
+                <div className="pt-6">
+                    <Link href={link} className="primary-btn ">
+                        Besøk Siden
+                    </Link>
+                </div>
             </div>
         </div>
     );
