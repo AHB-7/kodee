@@ -1,10 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { time } from "console";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 interface LogoInroProps {
     onComplete?: () => void; // onComplete is a function that returns void, and it's optional
@@ -51,8 +47,8 @@ export default function LogoInro({ onComplete }: LogoInroProps) {
                         y: [15, 0],
                     }}
                     transition={{
-                        delay: 0.7,
-                        duration: 2,
+                        delay: 0.5,
+                        duration: 1,
                         type: "spring",
                         bounce: 0.3,
                     }}
@@ -62,6 +58,7 @@ export default function LogoInro({ onComplete }: LogoInroProps) {
                         transformOrigin: "bottom",
                     }}
                     animate={{
+                        rotate: [0, 360, 0, 0],
                         y: [0, -135, 60, 0],
                         scaleX: [1.2, 1.2, 1.7, 1],
                         scaleY: [0.95, 0.6, 0.3, 1],
@@ -70,20 +67,25 @@ export default function LogoInro({ onComplete }: LogoInroProps) {
                         type: "spring",
                         bounce: 0.3,
                         repeat: 1,
+                        rotate: {
+                            delay: 0.5,
+                            duration: 0.8,
+                            times: [0, 0.3, 0.6, 1],
+                        },
                         y: {
-                            delay: 0.5, // Add delay here for y
-                            duration: 2,
-                            times: [0, 0.55, 0.7, 1],
+                            delay: 0.5,
+                            duration: 0.8,
+                            times: [0, 0.3, 0.6, 1],
                         },
                         scaleX: {
-                            delay: 1.7, // Add the same delay for scaleX
-                            duration: 0.4,
-                            times: [0, 0.45, 0.8, 1],
+                            delay: 0.7,
+                            duration: 0.6,
+                            times: [0, 0.3, 0.5, 1],
                         },
                         scaleY: {
-                            delay: 1.7, // Add the same delay for scaleY
-                            duration: 0.4,
-                            times: [0, 0.45, 0.8, 1],
+                            delay: 0.7,
+                            duration: 0.8,
+                            times: [0, 0.3, 0.5, 1],
                         },
                     }}
                 >
@@ -107,7 +109,7 @@ export default function LogoInro({ onComplete }: LogoInroProps) {
                         x: [100, 0],
                     }}
                     transition={{
-                        delay: 2,
+                        delay: 1.2,
                         type: "spring",
                         bounce: 0.5,
                         duration: 0.6,
@@ -122,7 +124,7 @@ export default function LogoInro({ onComplete }: LogoInroProps) {
                         x: [100, 0],
                     }}
                     transition={{
-                        delay: 2.3,
+                        delay: 1.5,
                         type: "spring",
                         bounce: 0.5,
                         duration: 0.6,
@@ -138,7 +140,7 @@ export default function LogoInro({ onComplete }: LogoInroProps) {
                         rotate: [180, 0],
                     }}
                     transition={{
-                        delay: 2.6,
+                        delay: 1.8,
                         duration: 0.5,
                         ease: "easeInOut",
                     }}
