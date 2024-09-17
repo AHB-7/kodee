@@ -81,6 +81,8 @@ export default function Nav() {
     const links = [
         { href: "/", label: "Hjem" },
         { href: "/projects", label: "Prosjekter" },
+        { href: "/om", label: "Om" },
+
         // { href: "/blog", label: "Blog" },
     ];
 
@@ -154,16 +156,19 @@ export default function Nav() {
                             </Link>
                         </motion.div>
                     ))}
-                    <motion.div
+                    {/* <motion.div
                         className=" flex gap-3 w-full max-w-xs pe-4 justify-end items-end mt-4"
                         variants={minifyVariants}
                         initial="hidden"
                         animate={isActive ? "visible" : "hidden"}
                     >
-                        <Link href="#" className="text-xl font-bold opacity-55">
+                        <Link
+                            href="/om"
+                            className="text-xl font-bold text-brand-primary"
+                        >
                             Om Kodee
                         </Link>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
                 <div></div>
             </motion.nav>

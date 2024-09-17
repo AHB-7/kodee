@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply bg-brand-dark text-white max-w-6xl mx-auto;
+    @apply bg-brand-dark text-white mx-auto;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -12,8 +12,9 @@ body {
 .center-section {
     @apply flex items-center justify-center flex-col;
 }
+
 h1 {
-    @apply text-6xl xs:text-7xl sm:text-8xl md:text-9xl text-center mt-12 font-extrabold;
+    @apply text-6xl xs:text-7xl sm:text-8xl md:text-9xl text-center mt-12 font-extrabold max-w-4xl;
     text-shadow: 2px 2px 0px chartreuse;
 }
 .shadow,

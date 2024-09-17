@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Background from "../components/home/hero/bacground";
 import Tjenster from "../components/home/services/tjenater";
 import HeroHome from "../components/home/hero/hero-home";
 import LogoInro from "../components/home/hero/logo-intro";

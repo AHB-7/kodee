@@ -22,7 +22,7 @@ export default function LogoInro({ onComplete }: LogoInroProps) {
                 opacity: [1, 0],
             }}
             transition={{
-                delay: 3.5,
+                delay: 2.4,
                 duration: 0.5,
             }}
         >
