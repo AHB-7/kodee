@@ -105,7 +105,7 @@ export default function Nav() {
                 >
                     <Image
                         src="/assets/message.svg"
-                        alt=""
+                        alt="Logo for sending a message/ logo for å sende en melding"
                         width={35}
                         height={35}
                         className="group-hover:scale-125 duration-300"
@@ -120,7 +120,7 @@ export default function Nav() {
                 >
                     <Image
                         src="/assets/phone.svg"
-                        alt=""
+                        alt="logo av en telefon/ logo of a phone"
                         width={35}
                         height={35}
                         className="group-hover:scale-125 duration-300"

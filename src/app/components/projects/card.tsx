@@ -43,7 +43,7 @@ export default function Card({
         >
             <div className="relative w-full overflow-hidden h-[20rem] rounded-lg">
                 <motion.div className="w-full h-full" style={{ scale: scale }}>
-                    <Image src={src} alt="" fill objectFit="cover" />
+                    <Image src={src} alt={description} fill objectFit="cover" />
                 </motion.div>
             </div>
             <div className="w-full max-w-xl lg:max-w-full mx-auto text-center lg:text-start">

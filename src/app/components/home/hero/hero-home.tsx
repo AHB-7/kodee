@@ -32,7 +32,7 @@ export default function HeroHome() {
                     <Image
                         src="/background/123.jpeg"
                         fill
-                        alt=""
+                        alt="background image of a neon lines in the dark"
                         className="object-cover"
                     />
                     <div className="h-screen w-full bg-gradient-to-b absolute from-brand-dark to-transparent"></div>
