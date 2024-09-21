@@ -217,11 +217,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
     children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="no" className={antonio.className}>
+            <head>
+                <script
+                    async
+                    src={`https://www.googletagmanager.com/gtag/js?id=G-5KK74VTXNX`}
+                ></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-5KK74VTXNX');
+            `,
+                    }}
+                />
+            </head>
             <body className="bg-brand-dark text-brand-light mx-auto">
                 <Nav />
                 {children}
