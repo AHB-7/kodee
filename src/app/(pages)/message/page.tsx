@@ -46,7 +46,7 @@ const Contact = () => {
 
     return (
         <div className="mb-auto">
-            <h1 className="py-12">Contact Us</h1>
+            <h1 className="py-12">Kontakt Oss!</h1>
             <form onSubmit={handleSubmit}>
                 <div className=" w-full max-w-4xl">
                     <label>Name:</label>

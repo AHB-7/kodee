@@ -75,7 +75,6 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="no" className={antonio.className}>
-            {" "}
             <body className="bg-brand-dark text-brand-light mx-auto">
                 <Nav />
                 {children}

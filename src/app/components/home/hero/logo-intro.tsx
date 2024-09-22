@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 interface LogoInroProps {
-    onComplete?: () => void; // onComplete is a function that returns void, and it's optional
+    onComplete?: () => void;
 }
 export default function LogoInro({ onComplete }: LogoInroProps) {
     const handleAnimationComplete = () => {

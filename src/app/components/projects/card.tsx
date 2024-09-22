@@ -35,7 +35,7 @@ export default function Card({
     return (
         <div
             ref={container}
-            className=" flex items-center flex-col-reverse lg:flex-row justify-center h-screen w-full gap-12 sticky top-0 border rounded-xl p-4 backdrop-blur-3xl bg-brand-dark bg-opacity-25"
+            className="flex items-center flex-col-reverse lg:flex-row justify-center h-screen w-full gap-12 sticky top-0 backdrop-blur-3xl bg-brand-dark bg-opacity-25"
             style={{
                 transform: `scale(${scaleContainer.get() - 0.02 * i})`,
                 top: `calc(0% + ${i * 20}px`,

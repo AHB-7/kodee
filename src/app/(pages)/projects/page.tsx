@@ -11,7 +11,7 @@ export default function Page() {
                     Her er en oversikt over alle prosjekter som ble utført.
                 </p>
             </section>
-            <section>
+            <section className=" max-w-6xl">
                 {projects.map((project, index) => {
                     return <Card key={index} i={index} {...project} />;
                 })}
