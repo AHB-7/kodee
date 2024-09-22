@@ -2,13 +2,14 @@ import "../styles/globals.css";
 import { Antonio } from "next/font/google";
 import { Metadata } from "next";
 import Nav from "../components/nav/nav";
+import Head from "next/head";
 
 const antonio = Antonio({
     weight: ["400", "600", "700"],
     subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
     icons: {
         icon: "/favicon.ico?v=1",
         apple: "/apple-touch-icon.png?v=1",
@@ -220,7 +221,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="no" className={antonio.className}>
-            <head>
+            <Head>
                 <script
                     async
                     src={`https://www.googletagmanager.com/gtag/js?id=G-5KK74VTXNX`}
@@ -235,7 +236,7 @@ export default function RootLayout({
             `,
                     }}
                 />
-            </head>
+            </Head>
             <body className="bg-brand-dark text-brand-light mx-auto">
                 <Nav />
                 {children}
