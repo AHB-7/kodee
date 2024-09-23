@@ -71,7 +71,7 @@ const MessageFormat = () => {
                         <p className="py-2">
                             Det har oppstått en feil. Prøv igjen senere.
                         </p>
-                        <p className="text-brand-primary text-end">
+                        <p className="text-brand-primary">
                             Du kan også sende en epost til oss eller ringe på:
                             <br />
                             hello@kodee.no
@@ -135,28 +135,6 @@ const MessageFormat = () => {
                 </div>
             </form>
             {statusMessage}
-            <div className="backdrop-blur-sm bg-black/80 h-screen w-full absolute top-0 left-0 flex items-center justify-center">
-                <div className="backdrop-blur-sm bg-black/50 mx-auto  top-0 left-0 h-fit p-4 border-brand-primary border rounded-lg">
-                    <p className="py-2">
-                        Det har oppstått en feil. Prøv igjen senere.
-                    </p>
-                    <p className="text-brand-primary">
-                        Du kan også sende en epost til oss eller ringe på:
-                        <br />
-                        hello@kodee.no
-                        <br />
-                        Tlf.+47 98 69 84 78{" "}
-                    </p>
-                    <div className="flex items-center justify-center pb-4 pt-8">
-                        <Link
-                            href="/projects"
-                            className="border py-2 px-5 rounded-md hover:border-brand-primary duration-300 focus:bg-brand-light focus:text-brand-dark"
-                        >
-                            Se Våre Projektor
-                        </Link>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 };
